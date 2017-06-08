@@ -1,6 +1,6 @@
 class BlueHud {
 	class BlueHud {
-		file = "BlueHud\functions";
+		file = "node_modules\blue-hud\BlueHud\functions";
 		class initHud {postInit = 1;};
 		class getRole {};
 		class setRole {};

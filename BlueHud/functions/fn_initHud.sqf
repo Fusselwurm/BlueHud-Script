@@ -27,6 +27,7 @@ if (!hasInterface) exitWith {};
 		_arr resize (count _arr - 15);
 		toString _arr
 	};
+    BlueHud_MissionRoot = (BlueHud_MissionRoot + "node_modules\blue-hud\");
 
 	//Load settings stored in profile, if not present use default settings
 	BlueHudSettings = profileNamespace getVariable ["BlueHudSettings", [false, false, true, [0,0,0], false, 0.08]];
