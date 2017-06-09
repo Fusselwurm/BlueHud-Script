@@ -1,7 +1,7 @@
 class RscTitles {
-	#include "BlueHud\RscTitles.hpp"
+	#include "node_modules\blue-hud\BlueHud\RscTitles.hpp"
 };
 class CfgFunctions {
-	#include "BlueHud\CfgFunctions.hpp"
+	#include "node_modules\blue-hud\BlueHud\CfgFunctions.hpp"
 };
-#include "BlueHud\Dialog.hpp"
+#include "node_modules\blue-hud\BlueHud\Dialog.hpp"
