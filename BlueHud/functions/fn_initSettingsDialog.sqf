@@ -55,6 +55,11 @@ _dialog displayCtrl 8 sliderSetPosition 1;
 _dialog displayCtrl 8 sliderSetSpeed [0.005, 0.005];
 _dialog displayCtrl 8 sliderSetPosition (BlueHudSettings select 5);
 
+_dialog displayCtrl 9 sliderSetRange [0.05, 1];
+_dialog displayCtrl 9 sliderSetPosition 1;
+_dialog displayCtrl 9 sliderSetSpeed [0.005, 0.005];
+_dialog displayCtrl 9 sliderSetPosition (BlueHudSettings select 6);
+
 if (BlueHudSettings select 0 && BlueHUD_allowCompass) then {
 	_dialog displayCtrl 3 cbSetChecked true;
 };

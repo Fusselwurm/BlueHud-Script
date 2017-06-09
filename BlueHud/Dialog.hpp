@@ -116,7 +116,8 @@ class dlgBlueHudSettings {
 		txtDot,
 		txtFade,
 		txtFOV,
-		txtSize
+		txtSize,
+        txtDimFactor
 	};
 	controls[] = {
 		cmbRole,
@@ -125,7 +126,8 @@ class dlgBlueHudSettings {
 		cbDot,
 		cbFade,
 		cmbFOV,
-		sldSize
+		sldSize,
+        sldDimFactor
 	};
 
 	class TitleBaer {
@@ -152,7 +154,7 @@ class dlgBlueHudSettings {
 		font = "PuristaMedium";
 		sizeEx = 0;
 		text = "";
-		h = 0.518;
+		h = 0.593;
 		w = 0.6;
 		x = safeZoneX + safeZoneW/2 - 0.3;
 		y = safeZoneY + safeZoneH/2 - 0.125 -0.109;
@@ -266,5 +268,29 @@ class dlgBlueHudSettings {
 		w = 0.4;
 		h = 0.05;
 		onSliderPosChanged = "(uiNamespace getVariable 'BlueHudMap') ctrlMapAnimAdd [0, (BlueHUDMapZoomConstant / (_this select 1)), BlueHUDMapZero]; ctrlMapAnimCommit (uiNamespace getVariable 'BlueHudMap'); BlueHudSettings set [5, (_this select 1)]; profileNamespace setVariable ['BlueHudSettings', BlueHudSettings]; [] call BlueHud_fnc_buildEH; false";
+	};
+
+    class txtDimFactor : ctrlBlueHudText {
+		idc = -1;
+		text = "Night brightness:";
+		y = safeZoneY + safeZoneH/2 + 0.398 -0.109;
+	};
+
+	class sldDimFactor {
+		idc = 9;
+		type = 43;
+		style = 1024;
+		arrowEmpty = "\A3\ui_f\data\gui\cfg\slider\arrowEmpty_ca.paa";
+		arrowFull = "\A3\ui_f\data\gui\cfg\slider\arrowFull_ca.paa";
+		border = "\A3\ui_f\data\gui\cfg\slider\border_ca.paa";
+		thumb = "\A3\ui_f\data\gui\cfg\slider\thumb_ca.paa";
+		color[] = {1,1,1,0.7};
+		colorActive[] = {1,1,1,0.7};
+		colorDisabled[] = {0,0,0,0.7};
+		x = safeZoneX + safeZoneW/2 - 0.1 - (0.025 * 3/4);
+		y = safeZoneY + safeZoneH/2 + 0.393 -0.109;
+		w = 0.4;
+		h = 0.05;
+		onSliderPosChanged = "BlueHudNightBrightness = (_this select 1); BlueHudSettings set [6, (_this select 1)]; profileNamespace setVariable ['BlueHudSettings', BlueHudSettings]; [] call BlueHud_fnc_buildEH; false";
 	};
 };

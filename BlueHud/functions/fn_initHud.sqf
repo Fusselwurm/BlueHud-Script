@@ -44,14 +44,20 @@ if (!hasInterface) exitWith {};
 		BlueHudSettings pushBack 0.08;
 		profileNamespace setVariable ['BlueHudSettings', BlueHudSettings];
 	};
+    if (count BlueHudSettings < 7) then {
+		BlueHudSettings pushBack 0.1;
+		profileNamespace setVariable ['BlueHudSettings', BlueHudSettings];
+	};
+
 
 	BlueHudShift = BlueHudSettings select 3;
 	if (BlueHudSettings select 4) then {
 		BlueHudCurrentAlpha = 0;
 	} else {
-		BlueHudCurrentAlpha = 0.8;	
+		BlueHudCurrentAlpha = 0.8;
 	};
 	BlueHudLastUnfade = -100;
+    BlueHudNightBrightness = BlueHudSettings select 6;
 
 	//Set default server settings
 	BlueHUD_allowedHUDModes = 7;
